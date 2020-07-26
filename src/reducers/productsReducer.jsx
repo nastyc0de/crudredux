@@ -1,3 +1,4 @@
+import { types } from "../types";
 
 const initialState = {
     productos:[],
@@ -5,9 +6,9 @@ const initialState = {
     loading: false
 }
 
-export default function(state = initialState, action){
+export const productsReducer = (state = initialState, action) => {
     switch (action.type) {   
         default:
-            state;
+            return state;
     }
 }
