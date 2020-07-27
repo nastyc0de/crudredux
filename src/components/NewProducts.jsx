@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { crearNuevoProducto } from '../actions/product';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const NewProducts = () => {
 
@@ -9,6 +9,13 @@ export const NewProducts = () => {
     const [precio, setPrecio] = useState(0);
 
     const dispatch = useDispatch();
+
+    const state = useSelector(state => state.products);
+
+    const {loading, error} = state;
+
+    const agregarProducto = producto => dispatch(crearNuevoProducto(producto));
+    
     // cuando el usuario haga el submit
     const handleSubmitNewProduct = e => {
         e.preventDefault();
@@ -20,7 +27,10 @@ export const NewProducts = () => {
         // si no hay errores
         
         // crear un nuevo producto
-        dispatch(crearNuevoProducto(nombre, precio));
+        agregarProducto({
+            nombre,
+            precio
+        });
     }
     return (
         <div className='row justify-content-center'>
@@ -62,6 +72,8 @@ export const NewProducts = () => {
                             Agregar
                             </button>
                         </form>
+                        {loading ? <p>Cargando...</p>: null}
+                        {error ? <p className='alert alert-danger p2 mt-4 text-center'>Hubo un error</p>: null}
                     </div>
                 </div>
             </div>
