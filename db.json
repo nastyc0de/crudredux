@@ -69,6 +69,56 @@
       "nombre": "weqweqwe",
       "precio": 120,
       "id": 14
+    },
+    {
+      "nombre": "pollo",
+      "precio": 123,
+      "id": 15
+    },
+    {
+      "nombre": "pollo",
+      "precio": 123,
+      "id": 16
+    },
+    {
+      "nombre": "pollo",
+      "precio": 123,
+      "id": 17
+    },
+    {
+      "nombre": "pollo",
+      "precio": 123,
+      "id": 18
+    },
+    {
+      "nombre": "pollo",
+      "precio": 123,
+      "id": 19
+    },
+    {
+      "nombre": "pollo",
+      "precio": 123,
+      "id": 20
+    },
+    {
+      "nombre": "pollo",
+      "precio": 123,
+      "id": 21
+    },
+    {
+      "nombre": "pollo",
+      "precio": 123,
+      "id": 22
+    },
+    {
+      "nombre": "cer",
+      "precio": 333,
+      "id": 23
+    },
+    {
+      "nombre": "uvas",
+      "precio": 35,
+      "id": 24
     }
   ]
 }

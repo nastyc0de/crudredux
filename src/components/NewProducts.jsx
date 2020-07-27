@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { crearNuevoProducto } from '../actions/product';
 import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const NewProducts = () => {
 
@@ -33,13 +35,14 @@ export const NewProducts = () => {
         });
     }
     return (
-        <div className='row justify-content-center'>
+        <div className='row justify-content-center mt-5'>
             <div className="col-md-8">
                 <div className="card">
                     <div className="card-body">
                         <h2 className="text-center mb-4 font-weight-bold">
                             Agregar Nuevo Producto
                         </h2>
+                        <ToastContainer autoClose={2500} />
                         <form
                             onSubmit={handleSubmitNewProduct}
                         >
@@ -72,7 +75,6 @@ export const NewProducts = () => {
                             Agregar
                             </button>
                         </form>
-                        {loading ? <p>Cargando...</p>: null}
                         {error ? <p className='alert alert-danger p2 mt-4 text-center'>Hubo un error</p>: null}
                     </div>
                 </div>

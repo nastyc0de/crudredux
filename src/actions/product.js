@@ -1,7 +1,8 @@
 import { types } from "../types";
 import {clienteAxios} from '../config/axios';
-import Noty from 'noty';
-import "../../node_modules/noty/lib/themes/mint.css";
+import { toast } from "react-toastify";
+
+
 
 // Crear nueva producto
 export const crearNuevoProducto = (producto) =>{
@@ -13,13 +14,7 @@ export const crearNuevoProducto = (producto) =>{
             // si todo sale bien actualiza el state
             dispatch(setProductSuccess(producto));
             // llamar a la alerta
-            setTimeout(() => {
-                new Noty({
-                    type: 'success',
-                    layout: 'topRight',
-                    text: 'El producto se ingreso correctamente'
-                }).show();
-            }, 100);
+            toast.success("Producto agregado");
         } catch (error) {
             dispatch(setProductError(true));
         }
