@@ -119,6 +119,41 @@
       "nombre": "uvas",
       "precio": 35,
       "id": 24
+    },
+    {
+      "nombre": "te",
+      "precio": 120,
+      "id": 25
+    },
+    {
+      "nombre": "vino",
+      "precio": 130,
+      "id": 26
+    },
+    {
+      "nombre": "pan",
+      "precio": 21,
+      "id": 27
+    },
+    {
+      "nombre": "pan",
+      "precio": 30,
+      "id": 28
+    },
+    {
+      "nombre": "leche",
+      "precio": 230,
+      "id": 29
+    },
+    {
+      "nombre": "aceite",
+      "precio": 120,
+      "id": 30
+    },
+    {
+      "nombre": "cocoa",
+      "precio": 90,
+      "id": 31
     }
   ]
 }

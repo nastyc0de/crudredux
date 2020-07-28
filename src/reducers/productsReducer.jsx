@@ -9,6 +9,7 @@ const initialState = {
 export const productsReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.AGREGAR_PRODUCTO:
+        case types.LISTADO_PRODUCTO:
             return{
                 ...state,
                 loading: true
@@ -25,7 +26,19 @@ export const productsReducer = (state = initialState, action) => {
             loading: false,
             error:action.payload
         }
-
+        case types.LISTADO_PRODUCTO_EXITOSO:
+        return{
+            ...state,
+            loading: false,
+            error:null,
+            productos: action.payload
+        }
+        case types.LISTADO_PRODUCTO_ERROR:
+        return{
+            ...state,
+            loading: false,
+            error:action.payload
+        }
         default:
             return state;
     }

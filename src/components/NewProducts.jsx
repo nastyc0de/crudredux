@@ -14,9 +14,9 @@ export const NewProducts = () => {
 
     const state = useSelector(state => state.products);
 
-    const {loading, error} = state;
+    const {error} = state;
 
-    const agregarProducto = producto => dispatch(crearNuevoProducto(producto));
+    const agregarProducto = producto => dispatch(crearNuevoProducto(producto))
     
     // cuando el usuario haga el submit
     const handleSubmitNewProduct = e => {
