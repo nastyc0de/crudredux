@@ -60,3 +60,27 @@ const listarProductoError = error =>({
     type:types.LISTADO_PRODUCTO_ERROR,
     payload: error
 })
+
+// eliminar producto
+export const eliminarProducto = (id) => {
+    return async(dispatch) => {
+        dispatch(obtenerId(id));
+         try {
+             await clienteAxios.delete(`/productos/${id}`);
+             dispatch(eliminarProductoExito())
+         } catch (error) {
+             dispatch(eliminarProductoError())
+         };
+    }
+}
+const obtenerId = id =>({
+    type:types.ELIMINAR_PRODUCTO,
+    payload: id
+});
+const eliminarProductoExito=()=>({
+    type:types.ELIMINAR_PRODUCTO_EXITOSO
+})
+const eliminarProductoError=()=>({
+    type:types.LISTADO_PRODUCTO_ERROR,
+    payload: true
+})

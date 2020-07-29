@@ -1,19 +1,9 @@
 {
   "productos": [
     {
-      "id": 1,
-      "nombre": "Jugo de Zanahoria",
-      "precio": "31111"
-    },
-    {
       "id": 2,
       "nombre": "Jugo de Naranja",
       "precio": "1"
-    },
-    {
-      "nombre": "Jugo de Naranja",
-      "precio": "300",
-      "id": 3
     },
     {
       "nombre": "Rib Eye 800g",
@@ -53,67 +43,12 @@
     {
       "nombre": "cocoa",
       "precio": 12,
-      "id": 11
-    },
-    {
-      "nombre": "cocoa",
-      "precio": 12,
-      "id": 12
-    },
-    {
-      "nombre": "cocoa",
-      "precio": 12,
       "id": 13
-    },
-    {
-      "nombre": "weqweqwe",
-      "precio": 120,
-      "id": 14
-    },
-    {
-      "nombre": "pollo",
-      "precio": 123,
-      "id": 15
-    },
-    {
-      "nombre": "pollo",
-      "precio": 123,
-      "id": 16
-    },
-    {
-      "nombre": "pollo",
-      "precio": 123,
-      "id": 17
-    },
-    {
-      "nombre": "pollo",
-      "precio": 123,
-      "id": 18
-    },
-    {
-      "nombre": "pollo",
-      "precio": 123,
-      "id": 19
-    },
-    {
-      "nombre": "pollo",
-      "precio": 123,
-      "id": 20
-    },
-    {
-      "nombre": "pollo",
-      "precio": 123,
-      "id": 21
     },
     {
       "nombre": "pollo",
       "precio": 123,
       "id": 22
-    },
-    {
-      "nombre": "cer",
-      "precio": 333,
-      "id": 23
     },
     {
       "nombre": "uvas",
@@ -132,11 +67,6 @@
     },
     {
       "nombre": "pan",
-      "precio": 21,
-      "id": 27
-    },
-    {
-      "nombre": "pan",
       "precio": 30,
       "id": 28
     },
@@ -149,11 +79,6 @@
       "nombre": "aceite",
       "precio": 120,
       "id": 30
-    },
-    {
-      "nombre": "cocoa",
-      "precio": 90,
-      "id": 31
     }
   ]
 }

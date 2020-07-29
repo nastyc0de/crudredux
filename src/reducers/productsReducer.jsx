@@ -3,7 +3,8 @@ import { types } from "../types";
 const initialState = {
     productos:[],
     error: null,
-    loading: false
+    loading: false,
+    delProducto: null
 }
 
 export const productsReducer = (state = initialState, action) => {
@@ -33,12 +34,25 @@ export const productsReducer = (state = initialState, action) => {
             error:null,
             productos: action.payload
         }
+        case types.ELIMINAR_PRODUCTO_ERROR:
         case types.LISTADO_PRODUCTO_ERROR:
         return{
             ...state,
             loading: false,
             error:action.payload
         }
+        case types.ELIMINAR_PRODUCTO:
+        return{
+            ...state,
+            delProducto:action.payload    
+        }
+        case types.ELIMINAR_PRODUCTO_EXITOSO:
+        return{
+            ...state,
+            productos: state.productos.filter(producto => producto.id !== state.delProducto),
+            delProducto: null
+        }
+        
         default:
             return state;
     }
