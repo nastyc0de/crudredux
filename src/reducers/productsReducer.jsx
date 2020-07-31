@@ -4,7 +4,8 @@ const initialState = {
     productos:[],
     error: null,
     loading: false,
-    delProducto: null
+    delProducto: null,
+    editProducto: null
 }
 
 export const productsReducer = (state = initialState, action) => {
@@ -36,6 +37,7 @@ export const productsReducer = (state = initialState, action) => {
         }
         case types.ELIMINAR_PRODUCTO_ERROR:
         case types.LISTADO_PRODUCTO_ERROR:
+        case types.OBTENER_EDITAR_ERROR:
         return{
             ...state,
             loading: false,
@@ -51,6 +53,20 @@ export const productsReducer = (state = initialState, action) => {
             ...state,
             productos: state.productos.filter(producto => producto.id !== state.delProducto),
             delProducto: null
+        }
+        case types.OBTENER_EDITAR_PRODUCTO:
+        return{
+            ...state,
+            editProducto: action.payload
+        }
+        case types.OBTENER_EDITAR_EXITO:
+        return{
+            ...state,
+            editProducto: null,
+            productos: state.products.map(producto =>
+                producto.id === action.payload.id ?
+                producto = action.payload : producto
+                )
         }
         
         default:

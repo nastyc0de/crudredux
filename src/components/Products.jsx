@@ -29,7 +29,7 @@ export const Products = () => {
                 </thead>
                 <tbody>
                     {
-                        productos.length === 0 ? <p>No hay productos</p> : (
+                        productos.length === 0 ? <h3>No hay productos</h3> : (
                             productos.map(producto =>(
                                 <Producto
                                     key={producto.id}

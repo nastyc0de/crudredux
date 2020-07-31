@@ -1,6 +1,7 @@
 import { types } from "../types";
 import {clienteAxios} from '../config/axios';
 import { toast } from "react-toastify";
+import Swal from 'sweetalert2';
 
 
 
@@ -67,9 +68,14 @@ export const eliminarProducto = (id) => {
         dispatch(obtenerId(id));
          try {
              await clienteAxios.delete(`/productos/${id}`);
-             dispatch(eliminarProductoExito())
+             dispatch(eliminarProductoExito());
+             Swal.fire(
+                'Borrado',
+                'Tu archivo ha sido borrado',
+                'success'
+              )
          } catch (error) {
-             dispatch(eliminarProductoError())
+             dispatch(eliminarProductoError());
          };
     }
 }
@@ -83,4 +89,39 @@ const eliminarProductoExito=()=>({
 const eliminarProductoError=()=>({
     type:types.LISTADO_PRODUCTO_ERROR,
     payload: true
+})
+
+// COLOCAR EL PRODUCTO EN EDICION
+
+export const editarProducto = producto => {
+    return(dispatch) => {
+        dispatch(obtenerProducto(producto))
+    }
+}
+
+const obtenerProducto = producto =>({
+    type: types.OBTENER_EDITAR_PRODUCTO,
+    payload: producto
+})
+
+// EDITAR UN REGISTRO EN LA API Y EL STATE COMENZAR_EDICION_PRODUCTO
+export const cargarProductoEdicion = producto =>{
+    return async(dispatch) => {
+        dispatch(cargarProducto());
+        try {
+            await clienteAxios.put(`/productos/${producto.id}`, producto);
+            dispatch(editarProductoExito(producto));
+            toast.info("Producto modificado");
+        } catch (error) {
+            toast.error("Existe un error");
+        }
+    }
+}
+const cargarProducto = producto =>({
+    type: types.COMENZAR_EDICION_PRODUCTO,
+    payload: producto
+})
+const editarProductoExito = producto => ({
+    type: types.OBTENER_EDITAR_EXITO,
+    payload: producto
 })

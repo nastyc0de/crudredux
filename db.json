@@ -1,29 +1,19 @@
 {
   "productos": [
     {
-      "id": 2,
-      "nombre": "Jugo de Naranja",
-      "precio": "1"
-    },
-    {
-      "nombre": "Rib Eye 800g",
+      "nombre": "Rib Eye 1000g",
       "precio": "200",
       "id": 4
     },
     {
-      "nombre": "Jugo de Fresa",
-      "precio": "200",
+      "nombre": "Jugo de Fresa con gas",
+      "precio": "300",
       "id": 5
     },
     {
       "nombre": "vino",
       "precio": 120,
       "id": 6
-    },
-    {
-      "nombre": "pan",
-      "precio": 12,
-      "id": 7
     },
     {
       "nombre": "leche",
@@ -34,16 +24,6 @@
       "nombre": "aceite",
       "precio": 150,
       "id": 9
-    },
-    {
-      "nombre": "queso",
-      "precio": 80,
-      "id": 10
-    },
-    {
-      "nombre": "cocoa",
-      "precio": 12,
-      "id": 13
     },
     {
       "nombre": "pollo",
@@ -64,11 +44,6 @@
       "nombre": "vino",
       "precio": 130,
       "id": 26
-    },
-    {
-      "nombre": "pan",
-      "precio": 30,
-      "id": 28
     },
     {
       "nombre": "leche",
