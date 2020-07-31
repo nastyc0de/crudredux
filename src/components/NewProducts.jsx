@@ -3,8 +3,9 @@ import { crearNuevoProducto } from '../actions/product';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { mostrarAlerta, ocultarAlerta } from '../actions/alert';
 
-export const NewProducts = () => {
+export const NewProducts = ({history}) => {
 
     // creando el state del componente
     const [nombre, setNombre] = useState('');
@@ -13,6 +14,7 @@ export const NewProducts = () => {
     const dispatch = useDispatch();
 
     const state = useSelector(state => state.products);
+    const alerta = useSelector(state => state.alert.alerta);
 
     const {error} = state;
 
@@ -24,15 +26,22 @@ export const NewProducts = () => {
         
         // validar formulario
         if (nombre.trim() === '' || precio <= 0) {
+            const alerta = {
+                msg:'Ambos campos son obligatorios',
+                clases:'alert alert-danger text-center text-uppercase p3'
+            }
+            dispatch(mostrarAlerta(alerta));
             return;
         }
         // si no hay errores
-        
+        dispatch(ocultarAlerta());
         // crear un nuevo producto
         agregarProducto({
             nombre,
             precio
         });
+        // redireccionar
+        history.push('/');
     }
     return (
         <div className='row justify-content-center mt-5'>
@@ -42,6 +51,7 @@ export const NewProducts = () => {
                         <h2 className="text-center mb-4 font-weight-bold">
                             Agregar Nuevo Producto
                         </h2>
+                        {alerta ? <p className={alerta.clases}>{alerta.msg}</p>:null}
                         <ToastContainer autoClose={2500} />
                         <form
                             onSubmit={handleSubmitNewProduct}
